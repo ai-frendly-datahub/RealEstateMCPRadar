@@ -1,6 +1,6 @@
 {
   "category": "realestate_mcp",
-  "generated_at": "2026-04-28T00:41:18.680431+00:00",
+  "generated_at": "2026-04-27T23:45:22.783554+00:00",
   "scope_note": "realestate_mcp treats the awesome-mcp-korea section as a T4 community directory seed. Repository metadata, API credential scope, and security context remain separate enrichment layers until archived, license, and advisory fields are collected.",
   "summary": {
     "total_sources": 2,
@@ -59,7 +59,7 @@
       "article_count": 3,
       "event_count": 3,
       "latest_event_at": "2026-04-24T12:44:35.669309+00:00",
-      "age_days": 3.5,
+      "age_days": 3.46,
       "latest_title": "real-estate-mcp",
       "latest_url": "https://github.com/tae0y/real-estate-mcp",
       "latest_mcp_domain": [
