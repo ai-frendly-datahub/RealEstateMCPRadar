@@ -20,6 +20,14 @@ def _seed_source(category):
     return seeds[0]
 
 
+def _mcp_source(category, repository: str):
+    return next(
+        source
+        for source in category.sources
+        if source.type == "mcp_server" and source.config.get("repository") == repository
+    )
+
+
 def test_mcp_category_config_uses_readme_section_source() -> None:
     category = load_category_config(_category_name())
 
@@ -77,6 +85,7 @@ def test_mcp_server_sources_are_disabled_metadata_candidates() -> None:
         "blocked_command_unresolved",
         "blocked_env_required",
         "blocked_tool_allowlist_unresolved",
+        "blocked_runtime_config_unresolved",
         "candidate_ready_for_fake_transport_test",
         "fake_transport_smoke_test_passed",
     }
@@ -88,6 +97,77 @@ def test_mcp_server_sources_are_disabled_metadata_candidates() -> None:
         assert source.config["repository"]
         assert isinstance(source.config.get("tools", []), list)
         assert isinstance(source.config.get("resources", []), list)
+        assert source.config["docs_advisory_audit_status"] == "passed"
+        assert (
+            source.config["docs_advisory_audit_artifact"]
+            == "_workspace/2026-04-30_cycle69_mcp_docs_advisory_audit.json"
+        )
+        assert source.config["github_readme_present"] is True
+        assert source.config["github_docs_present"] is True
+        assert source.config["github_docs_paths"]
+        assert source.config["github_security_advisory_access_status"].startswith("checked")
+        assert source.config["github_security_advisory_count"] >= 0
+        if source.config.get("command_discovery_status"):
+            assert source.config["command_discovery_checked_at"]
+            assert (
+                source.config["command_discovery_artifact"]
+                == "_workspace/2026-04-30_cycle71_mcp_command_discovery_audit.json"
+            )
+        if "command_or_endpoint_unresolved" in source.config.get("activation_gates", []):
+            assert source.config["command_discovery_status"]
         if source.config["activation_status"] != "metadata_only":
             assert source.config["activation_audited_at"]
             assert source.config["activation_gates"]
+
+
+def test_realestate_candidate_has_resolved_python_command() -> None:
+    category = load_category_config(_category_name())
+    source = _mcp_source(category, "gum798/A2A-MCP-RealEstate")
+
+    assert source.enabled is False
+    assert source.config["activation_status"] == "blocked_env_required"
+    assert source.config["command_discovery_status"] == "resolved_python_file"
+    assert source.config["command"] == "python"
+    assert source.config["args"] == ["app/mcp/real_estate_recommendation_mcp.py"]
+    assert "command_or_endpoint_unresolved" not in source.config["activation_gates"]
+    assert "env_secret_documentation_required" not in source.config["activation_gates"]
+    assert source.config["env_documentation_status"] == "documented_no_secret_placeholder"
+    assert (
+        source.config["env_documentation_artifact"]
+        == "_workspace/2026-05-07_mcp_env_documentation_manifest.json"
+    )
+    assert "tool_resource_allowlist_required" not in source.config["activation_gates"]
+    assert "tool_allowlist_unresolved" not in source.config["risk_scope"]
+    assert source.config["event_model"] == "mcp_tool_result"
+    assert source.config["env"] == [
+        "MOLIT_API_KEY",
+        "NAVER_CLIENT_ID",
+        "NAVER_CLIENT_SECRET",
+    ]
+    assert [tool for tool in source.config["tools"]] == [
+        "search_by_road_address",
+        "get_real_estate_data_advanced",
+        "analyze_location",
+        "evaluate_investment_value",
+        "evaluate_life_quality",
+        "recommend_property",
+        "get_regional_price_statistics",
+        "compare_similar_properties",
+    ]
+
+
+def test_gum798_a2a_realestate_candidate_has_fake_transport_evidence() -> None:
+    category = load_category_config(_category_name())
+    source = _mcp_source(category, "gum798/A2A-MCP-RealEstate")
+
+    assert source.config["fake_transport_smoke_test_status"] == "passed"
+    assert (
+        source.config["fake_transport_smoke_test_artifact"]
+        == "_workspace/2026-05-02_cycle83_realestate_gum798_a2a_fake_probe.json"
+    )
+    assert (
+        source.config["fake_transport_fixture"]
+        == "fixtures/mcp/fake_gum798_a2a_realestate_mcp.py"
+    )
+    assert "fake_transport_smoke_test_required" not in source.config["activation_gates"]
+    assert "real_transport_smoke_test_required" in source.config["activation_gates"]
