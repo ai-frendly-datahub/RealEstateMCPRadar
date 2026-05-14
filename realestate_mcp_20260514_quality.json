@@ -1,6 +1,6 @@
 {
   "category": "realestate_mcp",
-  "generated_at": "2026-05-14T02:29:30.842016+00:00",
+  "generated_at": "2026-05-14T07:46:57.023252+00:00",
   "scope_note": "realestate_mcp treats the awesome-mcp-korea section as a T4 community directory seed. Repository metadata, API credential scope, and security context remain separate enrichment layers until archived, license, and advisory fields are collected.",
   "summary": {
     "total_sources": 2,
@@ -29,11 +29,11 @@
     "env_preflight_not_required_source_count": 0,
     "repository_metadata_complete_source_count": 1,
     "repository_metadata_gap_count": 0,
-    "repository_metadata_fresh_source_count": 1,
-    "repository_metadata_stale_source_count": 0,
+    "repository_metadata_fresh_source_count": 0,
+    "repository_metadata_stale_source_count": 1,
     "repository_metadata_incomplete_source_count": 0,
     "repository_metadata_missing_checked_at_source_count": 0,
-    "repository_metadata_review_required_count": 0,
+    "repository_metadata_review_required_count": 1,
     "repository_docs_present_source_count": 1,
     "repository_docs_missing_source_count": 0,
     "repository_security_policy_present_source_count": 0,
@@ -60,7 +60,7 @@
     "activation_real_transport_required_source_count": 1,
     "activation_runtime_review_required_source_count": 0,
     "activation_ready_for_fake_transport_source_count": 0,
-    "daily_review_item_count": 2,
+    "daily_review_item_count": 3,
     "mcp_directory_entry_events": 3,
     "mcp_tool_result_events": 0,
     "linked_repository_metadata_events": 1,
@@ -101,7 +101,7 @@
       "status": "fresh",
       "article_count": 3,
       "event_count": 3,
-      "latest_event_at": "2026-05-14T02:29:30.272478+00:00",
+      "latest_event_at": "2026-05-14T07:46:56.393168+00:00",
       "age_days": 0.0,
       "latest_title": "real-estate-mcp",
       "latest_url": "https://github.com/tae0y/real-estate-mcp",
@@ -155,10 +155,10 @@
       ],
       "repository_metadata_gaps": [],
       "repository_metadata": {
-        "status": "fresh",
+        "status": "stale",
         "repository": "gum798/A2A-MCP-RealEstate",
         "checked_at": "2026-05-07T05:20:56+00:00",
-        "age_days": 6.88,
+        "age_days": 7.1,
         "freshness_sla_days": 7.0,
         "missing_fields": [],
         "github_pushed_at": "2025-09-08T08:27:04Z",
@@ -204,7 +204,7 @@
       "event_model": "mcp_directory_entry",
       "title": "real-estate-mcp",
       "url": "https://github.com/tae0y/real-estate-mcp",
-      "event_at": "2026-05-14T02:29:30.272478+00:00",
+      "event_at": "2026-05-14T07:46:56.393168+00:00",
       "mcp_domain": [
         "부동산",
         "청약",
@@ -228,7 +228,7 @@
       "event_model": "mcp_directory_entry",
       "title": "mcp-kr-realestate",
       "url": "https://github.com/ChangooLee/mcp-kr-realestate",
-      "event_at": "2026-05-14T02:29:30.272475+00:00",
+      "event_at": "2026-05-14T07:46:56.393165+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -253,7 +253,7 @@
       "event_model": "mcp_directory_entry",
       "title": "A2A-MCP-RealEstate",
       "url": "https://github.com/gum798/A2A-MCP-RealEstate",
-      "event_at": "2026-05-14T02:29:30.272462+00:00",
+      "event_at": "2026-05-14T07:46:56.393152+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -278,7 +278,7 @@
       "event_model": "risk_scope_signal",
       "title": "A2A-MCP-RealEstate",
       "url": "https://github.com/gum798/A2A-MCP-RealEstate",
-      "event_at": "2026-05-14T02:29:30.272462+00:00",
+      "event_at": "2026-05-14T07:46:56.393152+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -317,7 +317,7 @@
         "security_advisory_check": true
       },
       "repository": "gum798/A2A-MCP-RealEstate",
-      "repository_metadata_status": "fresh",
+      "repository_metadata_status": "stale",
       "repository_metadata_checked_at": "2026-05-07T05:20:56+00:00",
       "github_pushed_at": "2025-09-08T08:27:04Z",
       "github_license": "MIT",
@@ -354,6 +354,14 @@
       "activation_gates": [
         "real_transport_smoke_test_required"
       ]
+    },
+    {
+      "reason": "repository_metadata_stale",
+      "source": "gum798/A2A-MCP-RealEstate",
+      "repository": "gum798/A2A-MCP-RealEstate",
+      "checked_at": "2026-05-07T05:20:56+00:00",
+      "age_days": 7.1,
+      "freshness_sla_days": 7.0
     }
   ],
   "source_backlog": {
