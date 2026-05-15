@@ -1,6 +1,6 @@
 {
   "category": "realestate_mcp",
-  "generated_at": "2026-05-14T17:30:23.510618+00:00",
+  "generated_at": "2026-05-15T17:20:31.528405+00:00",
   "scope_note": "realestate_mcp treats the awesome-mcp-korea section as a T4 community directory seed. Repository metadata, API credential scope, and security context remain separate enrichment layers until archived, license, and advisory fields are collected.",
   "summary": {
     "total_sources": 2,
@@ -101,7 +101,7 @@
       "status": "fresh",
       "article_count": 3,
       "event_count": 3,
-      "latest_event_at": "2026-05-14T17:30:22.917916+00:00",
+      "latest_event_at": "2026-05-15T17:20:30.930571+00:00",
       "age_days": 0.0,
       "latest_title": "real-estate-mcp",
       "latest_url": "https://github.com/tae0y/real-estate-mcp",
@@ -158,7 +158,7 @@
         "status": "stale",
         "repository": "gum798/A2A-MCP-RealEstate",
         "checked_at": "2026-05-07T05:20:56+00:00",
-        "age_days": 7.51,
+        "age_days": 8.5,
         "freshness_sla_days": 7.0,
         "missing_fields": [],
         "github_pushed_at": "2025-09-08T08:27:04Z",
@@ -204,7 +204,7 @@
       "event_model": "mcp_directory_entry",
       "title": "real-estate-mcp",
       "url": "https://github.com/tae0y/real-estate-mcp",
-      "event_at": "2026-05-14T17:30:22.917916+00:00",
+      "event_at": "2026-05-15T17:20:30.930571+00:00",
       "mcp_domain": [
         "부동산",
         "청약",
@@ -228,7 +228,7 @@
       "event_model": "mcp_directory_entry",
       "title": "mcp-kr-realestate",
       "url": "https://github.com/ChangooLee/mcp-kr-realestate",
-      "event_at": "2026-05-14T17:30:22.917913+00:00",
+      "event_at": "2026-05-15T17:20:30.930569+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -253,7 +253,7 @@
       "event_model": "mcp_directory_entry",
       "title": "A2A-MCP-RealEstate",
       "url": "https://github.com/gum798/A2A-MCP-RealEstate",
-      "event_at": "2026-05-14T17:30:22.917895+00:00",
+      "event_at": "2026-05-15T17:20:30.930555+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -278,7 +278,7 @@
       "event_model": "risk_scope_signal",
       "title": "A2A-MCP-RealEstate",
       "url": "https://github.com/gum798/A2A-MCP-RealEstate",
-      "event_at": "2026-05-14T17:30:22.917895+00:00",
+      "event_at": "2026-05-15T17:20:30.930555+00:00",
       "mcp_domain": [
         "부동산",
         "실거래가"
@@ -360,7 +360,7 @@
       "source": "gum798/A2A-MCP-RealEstate",
       "repository": "gum798/A2A-MCP-RealEstate",
       "checked_at": "2026-05-07T05:20:56+00:00",
-      "age_days": 7.51,
+      "age_days": 8.5,
       "freshness_sla_days": 7.0
     }
   ],
